@@ -1,0 +1,776 @@
+import java.text.*;
+import java.util.*;
+class Staff {
+	String name;
+	String id;
+	String CNIC;
+	String phoneNo;
+	String gender;
+	String age;
+	
+	Staff(String name,String id,String CNIC,String phoneNo,String gender,String age){
+		this.name=name;
+		this.id=id;
+		this.CNIC=CNIC;
+		this.phoneNo=phoneNo;
+		this.gender=gender;
+		this.age=age;
+		}
+	
+	String getName(){
+		return name;
+	}
+	
+	String getId(){
+		return id;
+	}
+	
+	String getCNIC(){
+		return CNIC;
+	}
+	
+	String getPhoneNo(){
+		return phoneNo;
+	}
+	
+	String getGender(){
+		return gender;
+	}
+	
+	String getAge(){
+		return age;
+	}
+		
+	
+}
+class Registration{
+	
+	
+	String DriverName;
+	String VehicleNumber;
+	String DriverCNIC;
+	String DriverNumber;
+	String Vehicle;
+	
+	
+	Registration(String DriverName,	String Vehicle,String VehicleNumber,String DriverCNIC,	String DriverNumber){
+		this.DriverName=DriverName;
+		this.VehicleNumber=VehicleNumber;
+		this.DriverCNIC=DriverCNIC;
+		this.DriverNumber=DriverNumber;
+		this.Vehicle=Vehicle;
+		}
+	
+	
+	
+	String DriverName(){
+		return DriverName;
+	}
+	
+	String DriverNumber(){
+		return DriverNumber;
+	}
+	
+	String VehicleNumber(){
+		return VehicleNumber;
+	}
+	
+	String Vehicle(){
+		return Vehicle;
+	}
+	
+	String DriverCNIC(){
+		return DriverCNIC;
+	}
+	
+	
+}
+
+
+
+
+public class project {
+public static void main(String args []){
+	Scanner sc=new Scanner (System.in);
+	int y,b;
+	Calendar c1=Calendar.getInstance();
+	Date currentdate = new Date();
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	
+	
+	ArrayList <Staff> obj=new ArrayList <Staff>();//deo staff
+	ArrayList <Staff> obj1=new ArrayList <Staff>();//manager staff
+	ArrayList <Staff> obj2=new ArrayList <Staff>();//driver staff
+	ArrayList <Staff> obj3=new ArrayList <Staff>();//labor staff
+	ArrayList <Staff> obj4=new ArrayList <Staff>();//sweeper staff
+	ArrayList <Registration> obj6=new ArrayList <Registration>();//vehicle registration
+	
+	String gname[]=new String[50];
+	String gid[]=new String[50];
+	
+	obj.add(new Staff(" Ammar ","055"," 321 "," 0335 "," Male "," 19 "));
+	obj.add(new Staff(" Umair ","057"," 322 "," 0343 "," Male "," 19 "));
+	obj.add(new Staff(" Moosa ","060"," 323 "," 0340 "," Male "," 22 "));
+	obj1.add(new Staff(" Arfain ","012"," 123 "," 0333 "," Male "," 19 "));
+	obj2.add(new Staff(" Tariq ","090"," 221 "," 0343 "," Male "," 19 "));
+	obj2.add(new Staff(" Hamza ","085"," 222 "," 0340 "," Male "," 22 "));
+	obj2.add(new Staff(" Ram ","141"," 223 "," 0335 "," Male "," 19 "));
+	obj3.add(new Staff(" Jawwad ","058"," 441 "," 0343 "," Male "," 19 "));
+	obj3.add(new Staff(" Ahmed ","078"," 442 "," 0340 "," Male "," 22 "));
+	obj3.add(new Staff(" Hamza ","063"," 443 "," 0335 "," Male "," 19 "));
+	obj4.add(new Staff(" Asma ","083"," 551 "," 0343 "," Female "," 19 "));
+	obj4.add(new Staff(" Falak ","000"," 552 "," 0340 "," Female "," 22 "));
+	obj4.add(new Staff(" Urooj ","001"," 553 "," 0335 "," Female "," 19 "));
+	obj6.add(new Registration("Ammar","Trala","CE-205","055","0335"));
+	obj6.add(new Registration("Umair","Truck","CE-2016","057","0342"));
+	obj6.add(new Registration("Atta","Mazda","CE-215","062","0343"));
+	int gue=0;
+	char ch = '0';
+	while (ch != 'c'){
+	System.out.println("**********************************************************************************************************************************");
+	System.out.println("\t\t\t\t\t\t Welcome to gawadar port \n  press 1 for sign in as a member \t\t\t\t\t\t press 2 for sign in as a guest");
+	System.out.println("**********************************************************************************************************************************");
+	gname[0]="Taha";
+	gid[0]="124";
+	y=sc.nextInt();
+	switch (y){
+	case 1 :
+		System.out.println("**********************************************************************************************************************************");
+		
+		System.out.println("\t\t\t\t\t\t Welcome to members portion");
+		
+		System.out.println(" Press 1 for Sign in as DEO \t\t\t\t\t\t\t Press 2 for Sign in as Manager\n");
+		System.out.println("**********************************************************************************************************************************");
+		
+		b=sc.nextInt();
+		switch (b){
+		case 1 :
+				
+			System.out.println("\t\t\t\t\t\t Welcome to DEO Portion\t ");
+			ch = 0;
+			
+			System.out.println("**********************************************************************************************************************************");
+			
+			System.out.println("Kindly Enter Your Name And Id Sign In");
+			System.out.println("**********************************************************************************************************************************");
+			System.out.println(" Enter Your Name ");
+			String n=sc.next();
+			System.out.println(" Enter Your ID ");
+			String i=sc.next();
+			System.out.println("**********************************************************************************************************************************");
+			
+			
+			String kk = null;
+			for(int k=0;k<obj.size();k++){
+			
+				
+				if((obj.get(k).name!=null && obj.get(k).name.contains(n))  && (obj.get(k).id!=null && obj.get(k).id.contains(i))){
+		    		
+		    		kk=obj.get(k).name;}}
+			if(kk!=null){
+					System.out.println("\t\t\t\t\t\t Welcome Mr : "+kk);
+					while(ch!='c'){
+					System.out.println("**********************************************************************************************************************************");
+						
+		    		System.out.println(" Press 1 for Registry \n\n Press 2 for View \n\n Press 3 for Search \n\n Press 4 for Remove");
+		    		
+					int c=sc.nextInt();
+					switch(c){
+					case 1 :
+					System.out.println("**********************************************************************************************************************************");
+						
+						System.out.println(" Kindly Enter The Details Of Vehicle ");
+						
+						System.out.println(" Enter the Driver Name ");
+						String name=sc.next();
+						System.out.println(" Enter the Vehicle  ");
+						String vehicle=sc.next();
+						System.out.println(" Enter the Vehicle Number ");
+						String vnumber=sc.next();
+						System.out.println(" Enter Driver's Number ");
+						String dnumber=sc.next();
+						System.out.println(" Enter Driver's CNIC ");
+						String dCNIC=sc.next();
+					System.out.println("**********************************************************************************************************************************");
+							
+						obj6.add(new Registration( name, vehicle, vnumber,dCNIC, dnumber ));
+						System.out.println("\t\t\t\t\t\t After Registration ");
+						for(Registration a : obj6){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+a.DriverName()+"\n Vehicle : "+a.Vehicle()+"\n Vehicle Number : "+a.VehicleNumber()+"\n Driver CNIC : "+a.DriverCNIC()+"\n Driver's Phone Number : "+a.DriverNumber() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) +" "+ (c1.get(Calendar.HOUR)+":"+c1.get(Calendar.MINUTE)+":"+c1.get(Calendar.SECOND)) );
+					    	System.out.println(" --------------------------------------- ");
+						}
+						break;
+					
+					case 2 :
+						System.out.println("\t\t\t\t\t\t Complete Record   ");
+						for(Registration a : obj6){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+a.DriverName()+"\n Vehicle : "+a.Vehicle()+"\n Vehicle Number : "+a.VehicleNumber()+"\n Driver CNIC : "+a.DriverCNIC()+"\n Driver's Phone Number : "+a.DriverNumber() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+					    	System.out.println(" --------------------------------------- ");
+						}
+						break;
+					case 3 :
+					System.out.println("**********************************************************************************************************************************");
+						
+						System.out.println("Enter The Number Of Vehicle You Want To Search ");
+						String num=sc.next();	
+						for(Registration a : obj6){
+								if(a.VehicleNumber()!=null && a.VehicleNumber().contains(num)){
+									System.out.println(" Name : "+a.DriverName()+"\n Vehicle : "+a.Vehicle()+"\n Vehicle Number : "+a.VehicleNumber()+"\n Driver CNIC : "+a.DriverCNIC()+"\n Driver's Phone Number : "+a.DriverNumber() );
+										
+								}
+								
+								}
+							
+						break;
+					case 4 :
+
+						System.out.println("Enter The Number Of Vehicle You Want To Remove ");
+						String numrem=sc.next();	
+						for(int j=0;j<obj6.size();j++){
+								if(obj6.get(j).VehicleNumber.equals(numrem)){
+										obj6.remove(j);
+								}
+						}
+						System.out.println("\t\t\t\t\t\t After Removation ");
+						for(Registration a : obj6){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+a.DriverName()+"\n Vehicle : "+a.Vehicle()+"\n Vehicle Number : "+a.VehicleNumber()+"\n Driver CNIC : "+a.DriverCNIC()+"\n Driver's Phone Number : "+a.DriverNumber() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+					    	System.out.println(" --------------------------------------- ");
+					
+						}
+					break;
+					
+					default :
+						System.out.println("\t\t\t\t\t\t You typed the wrong option ");
+							break;
+						
+						}
+				
+				System.out.println("Press any key to continue or press c to exit");
+				ch=sc.next().charAt(0);
+				}
+				}else{
+					System.out.println("\t\t\t\t\t\t Try Again");
+				}
+				
+					
+				
+				
+	
+			
+		break;
+		case 2 :
+			
+			System.out.println("\t\t\t\t\t\t Welcome to Manager Portion\t ");
+			System.out.println("Kindly Enter Your Name And Id Sign In");
+			System.out.println(" Enter Name : ");
+			String t=sc.next();
+			System.out.println(" Enter Id : ");
+			String l=sc.next();
+			String bk1=null;
+			char ch1=0;
+		
+			for(int g=0;g<obj1.size();g++){
+			
+				
+				if((obj1.get(g).name!=null && obj1.get(g).name.contains(t))  && (obj1.get(g).id!=null && obj1.get(g).id.contains(l))){
+		    		bk1=obj1.get(g).name;}}
+			if(bk1!=null){
+			while(ch1!='c'){	
+		    		System.out.println(" Press 1 for View \n Press 2 for Registration \n Press 3 for Search \n Press 4 for Remove \n Press 5 for Guests Visited ");
+		    		int z=sc.nextInt();
+		    		switch (z){
+		    		case 1 :
+		    			System.out.println(" Press 1 for View In DeoStaff ");
+		    			System.out.println(" Press 2 for View In ManagerStaff ");
+		    			System.out.println(" Press 3 for View In DriverStaff ");
+		    			System.out.println(" Press 4 for View In LabourStaff ");
+		    			System.out.println(" Press 5 for View In SweeperStaff ");
+		    		int k = sc.nextInt();
+		    		switch (k){
+		    		case 1 :
+		    			System.out.println("\t\t\t\t\t\t Data Entry Operator Staff ");
+		    			for(Staff d : obj){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+d.getName()+"\n ID : "+d.getId()+"\n CNIC : "+d.getCNIC()+"\n Phone Number : "+d.getPhoneNo()+"\n Gender  : "+d.getGender()+"\n Age :"+d.getAge() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+					    	System.out.println(" --------------------------------------- ");
+						}
+		    			break;
+		    		case 2 :
+		    			System.out.println("\t\t\t\t\t\t Manager  Staff ");
+		    			for(Staff d : obj1){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+d.getName()+"\n ID : "+d.getId()+"\n CNIC : "+d.getCNIC()+"\n Phone Number : "+d.getPhoneNo()+"\n Gender  : "+d.getGender()+"\n Age :"+d.getAge() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+					    	System.out.println(" --------------------------------------- ");
+						}
+		    			break;
+		    		case 3 :
+		    			System.out.println("\t\t\t\t\t\t Driver Staff ");
+		    			for(Staff d : obj2){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+d.getName()+"\n ID : "+d.getId()+"\n CNIC : "+d.getCNIC()+"\n Phone Number : "+d.getPhoneNo()+"\n Gender  : "+d.getGender()+"\n Age :"+d.getAge() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+					    	System.out.println(" --------------------------------------- ");
+						}
+		    			break;
+		    		case 4 :
+		    			System.out.println("\t\t\t\t\t\t Labour Staff ");
+		    			for(Staff d : obj3){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+d.getName()+"\n ID : "+d.getId()+"\n CNIC : "+d.getCNIC()+"\n Phone Number : "+d.getPhoneNo()+"\n Gender  : "+d.getGender()+"\n Age :"+d.getAge() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+					    	System.out.println(" --------------------------------------- ");
+						}
+		    			break;
+		    		case 5 :
+		    			System.out.println("\t\t\t\t\t\t Sweeper Staff ");
+		    			for(Staff d : obj4){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+d.getName()+"\n ID : "+d.getId()+"\n CNIC : "+d.getCNIC()+"\n Phone Number : "+d.getPhoneNo()+"\n Gender  : "+d.getGender()+"\n Age :"+d.getAge() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+					    	System.out.println(" --------------------------------------- ");
+						}
+		    			break;
+		    		default :
+		    			System.out.println("\t\t\t\t\t\t You typed the wrong option ");
+		    		
+		    		break;
+		    		}
+		    		break;
+		    		case 2 :
+		    			System.out.println(" Press 1 for Registration In DeoStaff ");
+		    			System.out.println(" Press 2 for Registration In ManagerStaff ");
+		    			System.out.println(" Press 3 for Registration In DriverStaff ");
+		    			System.out.println(" Press 4 for Registration In LabourStaff ");
+		    			System.out.println(" Press 5 for Registration In SweeperStaff ");
+		    		int c=sc.nextInt();
+		    		switch (c){
+		    		case 1 : 
+		    			System.out.println("Kindly Enter The Details Of Your DEO Staff ");
+		    			System.out.println(" Enter Name ");
+						String name=sc.next();
+						System.out.println(" Enter Id  ");
+						String Id=sc.next();
+						System.out.println(" Enter CNIC ");
+						String CNIC=sc.next();
+						System.out.println(" Enter Phone Number ");
+						String phone=sc.next();
+						System.out.println(" Enter Gender ");
+						String gender=sc.next();
+						System.out.println(" Enter Age ");
+						String age=sc.next();
+					
+						obj.add(new Staff( name, Id, CNIC, phone , gender , age ));
+						System.out.println("\t\t\t\t\t\t After Registration ");
+						for(Staff d : obj){
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+d.getName()+"\n ID : "+d.getId()+"\n CNIC : "+d.getCNIC()+"\n Phone Number : "+d.getPhoneNo()+"\n Gender  : "+d.getGender()+"\n Age :"+d.getAge() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) +" "+ (c1.get(Calendar.HOUR)+":"+c1.get(Calendar.MINUTE)+":"+c1.get(Calendar.SECOND)) );
+					    	System.out.println(" --------------------------------------- ");
+					    	}
+						break;
+		    		case 2 :
+		    			System.out.println("Kindly Enter The Details Of Your Manager Staff ");
+		    			System.out.println(" Enter Name ");
+						 name=sc.next();
+						System.out.println(" Enter Id  ");
+						 Id=sc.next();
+						System.out.println(" Enter CNIC ");
+						 CNIC=sc.next();
+						System.out.println(" Enter Phone Number ");
+						 phone=sc.next();
+						System.out.println(" Enter Gender ");
+						 gender=sc.next();
+						System.out.println(" Enter Age ");
+						 age=sc.next();
+					
+						obj1.add(new Staff( name, Id, CNIC, phone , gender , age ));
+						System.out.println("\t\t\t\t\t\t After Registration ");
+						for(Staff d : obj1){
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+d.getName()+"\n ID : "+d.getId()+"\n CNIC : "+d.getCNIC()+"\n Phone Number : "+d.getPhoneNo()+"\n Gender  : "+d.getGender()+"\n Age :"+d.getAge() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) +" "+ (c1.get(Calendar.HOUR)+":"+c1.get(Calendar.MINUTE)+":"+c1.get(Calendar.SECOND)) );
+					    	System.out.println(" --------------------------------------- ");
+					    	}
+						break;
+		    		case 3 :
+		    			System.out.println("Kindly Enter The Details Of Your Driver Staff ");
+		    			System.out.println(" Enter Name ");
+						 name=sc.next();
+						System.out.println(" Enter Id  ");
+						 Id=sc.next();
+						System.out.println(" Enter CNIC ");
+						 CNIC=sc.next();
+						System.out.println(" Enter Phone Number ");
+						 phone=sc.next();
+						System.out.println(" Enter Gender ");
+						 gender=sc.next();
+						System.out.println(" Enter Age ");
+						 age=sc.next();
+					
+						obj2.add(new Staff( name, Id, CNIC, phone , gender , age ));
+						System.out.println("\t\t\t\t\t\t After Registration ");
+						for(Staff d : obj2){
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+d.getName()+"\n ID : "+d.getId()+"\n CNIC : "+d.getCNIC()+"\n Phone Number : "+d.getPhoneNo()+"\n Gender  : "+d.getGender()+"\n Age :"+d.getAge() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) +" "+ (c1.get(Calendar.HOUR)+":"+c1.get(Calendar.MINUTE)+":"+c1.get(Calendar.SECOND)) );
+					    	System.out.println(" --------------------------------------- ");
+					    	}
+						break;
+		    		case 4 :
+		    			System.out.println("Kindly Enter The Details Of Your Labour Staff ");
+		    			System.out.println(" Enter Name ");
+						 name=sc.next();
+						System.out.println(" Enter Id  ");
+						 Id=sc.next();
+						System.out.println(" Enter CNIC ");
+						 CNIC=sc.next();
+						System.out.println(" Enter Phone Number ");
+						 phone=sc.next();
+						System.out.println(" Enter Gender ");
+						 gender=sc.next();
+						System.out.println(" Enter Age ");
+						 age=sc.next();
+					
+						obj3.add(new Staff( name, Id, CNIC, phone , gender , age ));
+						System.out.println("\t\t\t\t\t\t After Registration ");
+						for(Staff d : obj3){
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+d.getName()+"\n ID : "+d.getId()+"\n CNIC : "+d.getCNIC()+"\n Phone Number : "+d.getPhoneNo()+"\n Gender  : "+d.getGender()+"\n Age :"+d.getAge() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) +" "+ (c1.get(Calendar.HOUR)+":"+c1.get(Calendar.MINUTE)+":"+c1.get(Calendar.SECOND)) );
+					    	System.out.println(" --------------------------------------- ");
+					    	}
+						break;
+		    		case 5 :
+		    			System.out.println("Kindly Enter The Details Of Your Sweeper Staff ");
+		    			System.out.println(" Enter Name ");
+						 name=sc.next();
+						System.out.println(" Enter Id  ");
+						 Id=sc.next();
+						System.out.println(" Enter CNIC ");
+						 CNIC=sc.next();
+						System.out.println(" Enter Phone Number ");
+						 phone=sc.next();
+						System.out.println(" Enter Gender ");
+						 gender=sc.next();
+						System.out.println(" Enter Age ");
+						 age=sc.next();
+					
+						obj4.add(new Staff( name, Id, CNIC, phone , gender , age ));
+						System.out.println("\t\t\t\t\t\t After Registration ");
+						for(Staff d : obj4){
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+d.getName()+"\n ID : "+d.getId()+"\n CNIC : "+d.getCNIC()+"\n Phone Number : "+d.getPhoneNo()+"\n Gender  : "+d.getGender()+"\n Age :"+d.getAge() );
+					    	System.out.println(" Date And Time : " + sdf.format(currentdate) +" "+ (c1.get(Calendar.HOUR)+":"+c1.get(Calendar.MINUTE)+":"+c1.get(Calendar.SECOND)) );
+					    	System.out.println(" --------------------------------------- ");
+					    	}
+						break;
+						}
+		    			break;
+		    		case 3 :
+		    			System.out.println(" Press 1 for Search In DeoStaff ");
+		    			System.out.println(" Press 2 for Search In ManagerStaff ");
+		    			System.out.println(" Press 3 for Search In DriverStaff ");
+		    			System.out.println(" Press 4 for Search In LabourStaff ");
+		    			System.out.println(" Press 5 for Search In SweeperStaff ");
+		    		int u=sc.nextInt();
+		    		switch (u){
+		    		case 1 :
+		    			System.out.println("Enter The ID Of Employee You Want To Search ");
+						String num=sc.next();	
+						for(Staff r : obj){
+								if(r.getId()!=null && r.getId().contains(num)){
+									System.out.println(" --------------------------------------- ");
+							    	System.out.println(" Name : "+r.getName()+"\n ID : "+r.getId()+"\n CNIC : "+r.getCNIC()+"\n Phone Number : "+r.getPhoneNo()+"\n Gender  : "+r.getGender()+"\n Age :"+r.getAge() );
+							    	System.out.println(" --------------------------------------- ");
+								}
+								}
+							break;
+		    		case 2 :
+		    			System.out.println("Enter The ID Of Employee You Want To Search ");
+						 num=sc.next();	
+						for(Staff r : obj1){
+								if(r.getId()!=null && r.getId().contains(num)){
+									System.out.println(" --------------------------------------- ");
+							    	System.out.println(" Name : "+r.getName()+"\n ID : "+r.getId()+"\n CNIC : "+r.getCNIC()+"\n Phone Number : "+r.getPhoneNo()+"\n Gender  : "+r.getGender()+"\n Age :"+r.getAge() );
+							    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+							    	System.out.println(" --------------------------------------- ");
+								}
+								}
+							break;
+		    		case 3 :
+		    			System.out.println("Enter The ID Of Employee You Want To Search ");
+						 num=sc.next();	
+						for(Staff r : obj2){
+								if(r.getId()!=null && r.getId().contains(num)){
+									System.out.println(" --------------------------------------- ");
+							    	System.out.println(" Name : "+r.getName()+"\n ID : "+r.getId()+"\n CNIC : "+r.getCNIC()+"\n Phone Number : "+r.getPhoneNo()+"\n Gender  : "+r.getGender()+"\n Age :"+r.getAge() );
+							    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+							    	System.out.println(" --------------------------------------- ");
+								}
+								}
+							break;
+		    		case 4 :
+		    			System.out.println("Enter The ID Of Employee You Want To Search ");
+						 num=sc.next();	
+						for(Staff r : obj3){
+								if(r.getId()!=null && r.getId().contains(num)){
+									System.out.println(" --------------------------------------- ");
+							    	System.out.println(" Name : "+r.getName()+"\n ID : "+r.getId()+"\n CNIC : "+r.getCNIC()+"\n Phone Number : "+r.getPhoneNo()+"\n Gender  : "+r.getGender()+"\n Age :"+r.getAge() );
+							    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+							    	System.out.println(" --------------------------------------- ");
+								}
+								}
+							break;
+		    		case 5 :
+		    			System.out.println("Enter The ID Of Employee You Want To Search ");
+						 num=sc.next();	
+						for(Staff r : obj4){
+								if(r.getId()!=null && r.getId().contains(num)){
+									System.out.println(" --------------------------------------- ");
+							    	System.out.println(" Name : "+r.getName()+"\n ID : "+r.getId()+"\n CNIC : "+r.getCNIC()+"\n Phone Number : "+r.getPhoneNo()+"\n Gender  : "+r.getGender()+"\n Age :"+r.getAge() );
+							    	System.out.println(" Date And Time : " + sdf.format(currentdate) );
+							    	System.out.println(" --------------------------------------- ");
+								}
+								}
+							break;
+		    		default :
+		    			System.out.println("\t\t\t\t\t\t You typed the wrong option ");
+		    		break;
+		    		}
+		    		break;
+		    		case 4 :
+		    			System.out.println(" Press 1 for Remove In DeoStaff ");
+		    			System.out.println(" Press 2 for Remove In ManagerStaff ");
+		    			System.out.println(" Press 3 for Remove In DriverStaff ");
+		    			System.out.println(" Press 4 for Remove In LabourStaff ");
+		    			System.out.println(" Press 5 for Remove In SweeperStaff ");
+		    		int v=sc.nextInt();
+		    		switch (v){
+		    		case 1 :
+
+						System.out.println("Enter Id Of Staff Member You Want To Remove ");
+						String numrem=sc.next();	
+						for(int j=0;j<obj.size();j++){
+							if(obj.get(j).id.equals(numrem)){
+								obj.remove(j);
+						}
+				}
+						System.out.println("\t\t\t\t\t\t After Removation ");
+							for(Staff f : obj){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+f.getName()+"\n ID : "+f.getId()+"\n CNIC : "+f.getCNIC()+"\n Phone Number : "+f.getPhoneNo()+"\n Gender  : "+f.getGender()+"\n Age :"+f.getAge() );
+					    	System.out.println(" --------------------------------------- ");
+						
+						}
+					break;
+		    		case 2 :
+		    			System.out.println("Enter Id Of Staff Member You Want To Remove ");
+						 numrem=sc.next();	
+						for(int j=0;j<obj1.size();j++){
+								if(obj1.get(j).id.equals(numrem)){
+										obj1.remove(j);
+								}
+						}
+						System.out.println("\t\t\t\t\t\t After Removation ");
+						for(Staff f : obj1){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+f.getName()+"\n ID : "+f.getId()+"\n CNIC : "+f.getCNIC()+"\n Phone Number : "+f.getPhoneNo()+"\n Gender  : "+f.getGender()+"\n Age :"+f.getAge() );
+					    	System.out.println(" --------------------------------------- ");
+						
+						}
+					break;
+		    		case 3 :
+
+		    			System.out.println("Enter The ID Of person You Want To Remove ");
+						 numrem=sc.next();	
+						for(int j=0;j<obj2.size();j++){
+								if(obj2.get(j).id.equals(numrem)){
+										obj2.remove(j);
+								}
+						}
+						System.out.println("\t\t\t\t\t\t After Removation ");
+						for(Staff f : obj2){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+f.getName()+"\n ID : "+f.getId()+"\n CNIC : "+f.getCNIC()+"\n Phone Number : "+f.getPhoneNo()+"\n Gender  : "+f.getGender()+"\n Age :"+f.getAge() );
+					    	System.out.println(" --------------------------------------- ");
+						
+						}
+					break;
+		    		case 4 :
+
+		    			System.out.println("Enter Id Of Staff Member You Want To Remove ");
+						numrem=sc.next();	
+						for(int j=0;j<obj3.size();j++){
+								if(obj3.get(j).id.equals(numrem)){
+										obj3.remove(j);
+								}
+						}
+						System.out.println("\t\t\t\t\t\t After Removation ");
+						for(Staff f : obj3){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+f.getName()+"\n ID : "+f.getId()+"\n CNIC : "+f.getCNIC()+"\n Phone Number : "+f.getPhoneNo()+"\n Gender  : "+f.getGender()+"\n Age :"+f.getAge() );
+					    	System.out.println(" --------------------------------------- ");
+						
+						}
+					break;
+		    		case 5 :
+
+		    			System.out.println("Enter Id Of Staff Member You Want To Remove ");
+						 numrem=sc.next();	
+						for(int j=0;j<obj4.size();j++){
+								if(obj4.get(j).id.equals(numrem)){
+										obj4.remove(j);
+								}
+						}
+						System.out.println("\t\t\t\t\t\t After Removation ");
+						for(Staff f : obj4){
+							
+							System.out.println(" --------------------------------------- ");
+					    	System.out.println(" Name : "+f.getName()+"\n ID : "+f.getId()+"\n CNIC : "+f.getCNIC()+"\n Phone Number : "+f.getPhoneNo()+"\n Gender  : "+f.getGender()+"\n Age :"+f.getAge() );
+					    	System.out.println(" --------------------------------------- ");
+						
+						}
+					break;
+		    		default :
+		    			System.out.println("\t\t\t\t\t\t You typed the wrong option ");
+		    		break;
+		    		
+		    		}
+		    		case 5 :
+		    			System.out.println("\t\t\t\t\t\t\t Guests Visited ");
+		    			for(int s=0;s<gname.length;s++ ){
+		    				if(gname[s]!=null){
+		    				System.out.println(" --------------------------------------- ");
+		    				System.out.println(" Guest name : "+ gname[s]+"\n Guest id : "+ gid[s]);
+		    				System.out.println(" Date : " + sdf.format(currentdate) +"\n Time : "+ (c1.get(Calendar.HOUR)+":"+c1.get(Calendar.MINUTE)+":"+c1.get(Calendar.SECOND)) );
+		    				System.out.println(" --------------------------------------- ");  	
+		    				System.out.println(" ");
+		    				}}
+		    		}
+		    	
+		    		
+		    		System.out.println("Press any key to conitnue or press c to exit");
+		    		ch1=sc.next().charAt(0);
+		    		}
+			
+			
+		    		
+		    		
+		    		
+		    		
+		    		
+		}
+			else{
+				System.out.println("\t\t\t\t\t\t Try Again ");
+			}
+				
+		break;
+	}
+	
+		
+		
+			
+		
+		
+break;
+	case 2 :
+		
+		System.out.println("\t\t\t\t\t\t Welcome to guests portion\t");
+		
+		 ch=0;
+		while (ch!='c'){
+		System.out.println("Please Enter Your Name And CNIC for enter in Gawadar Port");
+		gue++;
+		
+		System.out.println(" Enter Name : ");
+		gname[gue]=sc.next();
+		System.out.println(" Enter ID : ");
+		gid[gue]=sc.next();
+		
+		System.out.println(" Press 1 for view in Registration Details \n Press 2 for view in Sweeper Details \n Press 3 for view in Labour Details \n Press 4 for view in Driver Details ");
+		int h=sc.nextInt();
+		switch(h){
+		case 1 :
+			System.out.println("\t\t\t\t\t\t Registration Details ");
+			for(Registration a : obj6){
+				
+				System.out.println(" --------------------------------------- ");
+		    	System.out.println(" Name : "+a.DriverName()+"\n Vehicle : "+a.Vehicle()+"\n Vehicle Number : "+a.VehicleNumber()+"\n Driver CNIC : "+a.DriverCNIC()+"\n Driver's Phone Number : "+a.DriverNumber() );
+		    	System.out.println(" --------------------------------------- ");
+			}
+		break;
+		case 2 :
+			System.out.println(" \t\t\t\t\t\tSweeper Details ");
+			for(Staff a : obj4){
+				
+				System.out.println(" --------------------------------------- ");
+		    	System.out.println(" Name : "+a.getName()+"\n ID : "+a.getId()+"\n CNIC : "+a.getCNIC()+"\n Phone Number : "+a.getPhoneNo()+"\n Gender  : "+a.getGender()+"\n Age :"+a.getAge() );
+		    	System.out.println(" --------------------------------------- ");
+			}
+		break;
+		case 3 :
+			System.out.println(" \t\t\t\t\t\tLabour Details ");
+			for(Staff a : obj3){
+				
+				System.out.println(" --------------------------------------- ");
+		    	System.out.println(" Name : "+a.getName()+"\n ID : "+a.getId()+"\n CNIC : "+a.getCNIC()+"\n Phone Number : "+a.getPhoneNo()+"\n Gender  : "+a.getGender()+"\n Age :"+a.getAge() );
+		    	System.out.println(" --------------------------------------- ");
+	}
+		break;
+		case 4 :
+			System.out.println(" \t\t\t\t\t\tDriver Details ");
+			for(Staff a : obj2){
+				
+				System.out.println(" --------------------------------------- ");
+		    	System.out.println(" Name : "+a.getName()+"\n ID : "+a.getId()+"\n CNIC : "+a.getCNIC()+"\n Phone Number : "+a.getPhoneNo()+"\n Gender  : "+a.getGender()+"\n Age :"+a.getAge() );
+		    	System.out.println(" --------------------------------------- ");
+	}
+		break;
+		default :
+			System.out.println( " \t\t\t\t\t\tYou typed the wrong option " );
+		break;
+		
+		}
+		System.out.println(" Press any key to continue or press c to exit ");
+		ch=sc.next().charAt(0);
+		}
+		
+		
+	}
+
+	System.out.println(" Press any key to get back to program or\n press c to exit from program ");
+	ch = sc.next().charAt(0);
+	}
+
+
+
+
+
+
+
+
+
+
+
+}
+}
